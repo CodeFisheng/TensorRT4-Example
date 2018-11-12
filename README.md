@@ -21,7 +21,7 @@ download [TensorRT4](https://developer.nvidia.com/nvidia-tensorrt-download) and 
 You can download the ResNetv2-ImageNet [Frozen Graph](http://download.tensorflow.org/models/official/resnetv2_imagenet_frozen_graph.pb) and put it in the dir `./model`, then <br>
 
 ```bashrc
-yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb -fp16
+yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb --fp16
 ```
 For the full set of possible parameters, you can run `python main.py --help`
 
