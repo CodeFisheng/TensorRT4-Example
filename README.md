@@ -13,7 +13,7 @@ NVIDIA announced the integration of TensorRT 4.0.1.6 inference optimization tool
 ```bashrc
 yang@yuhy:~$ pip install tensorflow-gpu==1.11.0
 ```
-### Install TensorRT.
+#### Install TensorRT.
 download [TensorRT4](https://developer.nvidia.com/nvidia-tensorrt-download) and install it as [Installation Guide](https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html)
 
 ### Step 2: Get a model to optimize
@@ -24,6 +24,11 @@ You can download the ResNetv2-ImageNet [Frozen Graph](http://download.tensorflow
 yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb -fp16
 ```
 For the full set of possible parameters, you can run `python main.py --help`
+
+
+### Step 3: Get an image to test
+The script can accept a JPEG image file to use for predictions. If none is provided, We provide a sample `./data/elephent.jpg `here which can be passed in with the --image_file flag.
+
 
 ### Step 3: Compare inference performance with native model
 ```bashrc
