@@ -6,3 +6,32 @@ NVIDIA announced the integration of TensorRT 4.0.1.6 inference optimization tool
     <img width="70%" src="https://github.com/YunYang1994/Pytensort/blob/master/image/workflow.png" style="max-width:80%;">
     </a>
 </p>
+
+## How to Run This Script
+### Step 1: Install Prerequisites
+#### Install TensorFlow.
+```bashrc
+yang@yuhy:~$ pip install tensorflow-gpu==1.11.0
+```
+### Install TensorRT.
+download [TensorRT4](https://developer.nvidia.com/nvidia-tensorrt-download) and install it as [Installation Guide](https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html)
+
+### Step 2: Get a model to optimize
+
+You can download the ResNetv2-ImageNet [Frozen Graph](http://download.tensorflow.org/models/official/resnetv2_imagenet_frozen_graph.pb) and put it in './model', then <br>
+
+```bashrc
+yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb -fp16
+```
+For the full set of possible parameters, you can run `python main.py --help`
+
+### Step 3: Compare inference performance with native model
+```bashrc
+yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb -if ./data/elephent.jpg
+```
+```bashrc
+yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph-fp16.pb -if ./data/elephent.jpg
+```
+
+
+
