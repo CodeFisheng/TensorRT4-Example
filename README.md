@@ -23,20 +23,30 @@ You can download the ResNetv2-ImageNet [Frozen Graph](http://download.tensorflow
 ```bashrc
 yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb --fp16
 ```
-For the full set of possible parameters, you can run `python main.py --help`
-
-
+For the full set of possible parameters, you can run `python main.py --help`, The script will also output the GraphDefs used for each of the modes run, for future use and inspection
+```
+yang@yuhy:~$ ls ./model/
+resnetv2_imagenet_frozen_graph-fp16.pb  resnetv2_imagenet_frozen_graph.pb
+```
 ### Step 3: Get an image to test
 The script can accept a JPEG image file to use for predictions. If none is provided, We provide a sample `./data/elephent.jpg `here which can be passed in with the --image_file flag.
 
 
 ### Step 4: Compare inference performance with native model
+
 ```bashrc
 yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb -if ./data/elephent.jpg
+INFO:tensorflow:Starting Warmup cycle
+INFO:tensorflow:Starting timing.
+INFO:tensorflow:Timing loop done!
+=> prediction: ['African elephant, Loxodonta africana']
+=> Frame Per Second info: max 64.74 fps, min 55.23 fps, mean 64.07 fps, std 1.04 fps
 ```
 ```bashrc
 yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph-fp16.pb -if ./data/elephent.jpg
+INFO:tensorflow:Starting Warmup cycle
+INFO:tensorflow:Starting timing.
+INFO:tensorflow:Timing loop done!
+=> prediction: ['African elephant, Loxodonta africana']
+=> Frame Per Second info: max 129.13 fps, min 92.65 fps, mean 121.18 fps, std 7.37 fps
 ```
-
-
-
