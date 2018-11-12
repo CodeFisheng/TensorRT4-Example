@@ -18,7 +18,7 @@ download [TensorRT4](https://developer.nvidia.com/nvidia-tensorrt-download) and 
 
 ### Step 2: Get a model to optimize
 
-You can download the ResNetv2-ImageNet [Frozen Graph](http://download.tensorflow.org/models/official/resnetv2_imagenet_frozen_graph.pb) and put it in './model', then <br>
+You can download the ResNetv2-ImageNet [Frozen Graph](http://download.tensorflow.org/models/official/resnetv2_imagenet_frozen_graph.pb) and put it in the dir `./model`, then <br>
 
 ```bashrc
 yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb -fp16
