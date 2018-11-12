@@ -30,7 +30,7 @@ For the full set of possible parameters, you can run `python main.py --help`
 The script can accept a JPEG image file to use for predictions. If none is provided, We provide a sample `./data/elephent.jpg `here which can be passed in with the --image_file flag.
 
 
-### Step 3: Compare inference performance with native model
+### Step 4: Compare inference performance with native model
 ```bashrc
 yang@yuhy:~$ python3 main.py -fg ./model/resnetv2_imagenet_frozen_graph.pb -if ./data/elephent.jpg
 ```
